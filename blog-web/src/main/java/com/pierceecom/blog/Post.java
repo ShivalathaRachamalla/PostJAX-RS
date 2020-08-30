@@ -2,7 +2,6 @@ package com.pierceecom.blog;
 /***
  *   Post class has the details of id, Title and Content.
  */
-/
 public class Post {
 
     private String id;
@@ -21,7 +20,6 @@ public class Post {
     /***
      * @return the postId
      */
-    /
     public String getId() {
         return this.id;
     }
@@ -36,7 +34,6 @@ public class Post {
     /***
      * @return the post title.
      */
-    /
     public String getTitle() {
         return this.title;
     }
@@ -44,7 +41,6 @@ public class Post {
     /***
      * @set/modify the post title.
      */
-    /
     public void setTitle(String title) {
         this.title = title;
     }
@@ -52,7 +48,6 @@ public class Post {
     /***
      * @return the post content
      */
-    /
     public String getContent() {
         return this.content;
     }
@@ -60,7 +55,6 @@ public class Post {
     /***
      * @set/modify the post content.
      */
-    /
     public void setContent(String content) {
         this.content = content;
     }
