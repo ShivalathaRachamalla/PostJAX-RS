@@ -54,7 +54,7 @@ public class PostResource {
     @PUT
     @Path("/{id}")
     public Response putPostById(@PathParam("id") String id, Post p) {
-        if (p.getId() != null && id != p.getId()) {
+        if (p.getId() != null && !id.equals(p.getId())) {
             return Response.status(Response.Status.METHOD_NOT_ALLOWED).entity("Invalid input").build();
         } else if (p.getId() == "" || p.getId() == " " || p.getTitle() == null || p.getContent() == null) {
             return Response.status(Response.Status.METHOD_NOT_ALLOWED).entity("Invalid input").build();
