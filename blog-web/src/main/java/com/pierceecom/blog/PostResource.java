@@ -32,7 +32,7 @@ public class PostResource {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     public Response createPost(Post p) {
-        if (p.getTitle() == null || p.getContent() == null || p.getId() == null) {
+        if (p.getTitle() == null || p.getContent() == null || p.getId() == null || p.getId() == "" || p.getId() == " ") {
             return Response.status(Response.Status.METHOD_NOT_ALLOWED).entity("Invalid input").build();
         } else if (ps.getPostById(p.getId()) != null) {
             return Response.status(Response.Status.CONFLICT).entity("Post with id : "+p.getId()+ " already exist").build();
@@ -56,7 +56,7 @@ public class PostResource {
     public Response putPostById(@PathParam("id") String id, Post p) {
         if (p.getId() != null && id != p.getId()) {
             return Response.status(Response.Status.METHOD_NOT_ALLOWED).entity("Invalid input").build();
-        } else if (p.getTitle() == null || p.getContent() == null) {
+        } else if (p.getId() == "" || p.getId() == " " || p.getTitle() == null || p.getContent() == null) {
             return Response.status(Response.Status.METHOD_NOT_ALLOWED).entity("Invalid input").build();
         }
         Post p1 = ps.getPostById(id);
