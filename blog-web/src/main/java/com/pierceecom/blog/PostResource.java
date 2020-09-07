@@ -64,8 +64,8 @@ public class PostResource {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
         // If id is not part of Post object, setting id to the Post object with the path param
-        p1.setId(id);
-        ps.createPost(p1);
+        p.setId(id);
+        ps.createPost(p);
         return Response.status(Response.Status.CREATED).entity(p1).build();
     }
 
